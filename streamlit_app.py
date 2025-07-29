@@ -5,8 +5,6 @@ import plotly.express as px
 original_DF = pd.read_csv('data/Consult_Summary_Report_-_CP.csv')
 original_DF['timeBetweenAcceptandCompletion'] = original_DF['updatedTime'].sub(original_DF['createdTime'])
 original_DF.head(n=10)
-
-
 st.title("Carolina Pines Patient Report Data: Interactive")
 st.dataframe(original_DF, use_container_width=True)
 columns = st.multiselect("Select columns to display", options=original_DF.columns, default=list(original_DF.columns))
@@ -25,3 +23,5 @@ if num_column:
 if cat_column:
     fig_2 = px.bar(original_DF[cat_column], x='index', y=cat_column, title='Frequency of f{cat_column}')
     st.bar_chart(fig_2, use_container_width=True)
+
+>>>>>>> f47ac67618f2c5c421deaff36451d389beef2726
