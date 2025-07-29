@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-original_DF = pd.read_csv('data/Consult_Summary_Report_-_CP.csv')
+original_DF = pd.read_csv('Consult_Summary_Report_-_CP.csv')
 original_DF['timeBetweenAcceptandCompletion'] = original_DF['updatedTime'].sub(original_DF['createdTime'])
 original_DF.head(n=10)
 st.title("Carolina Pines Patient Report Data: Interactive")
