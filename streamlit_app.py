@@ -21,5 +21,5 @@ if num_column:
     st.plotly_chart(fig_1, use_container_width=True, theme="streamlit")
 
 if cat_column:
-    fig_2 = st.bar_chart(original_DF[cat_column], y=cat_column, x_label = f'{cat_column}', y_label = f'Frequency of {cat_column}')
+    fig_2 = px.bar(original_DF[cat_column], x=cat_column, title = f'Frequency of {cat_column}')
     st.bar_chart(fig_2, use_container_width=True)
