@@ -23,5 +23,3 @@ if num_column:
 if cat_column:
     fig_2 = px.bar(original_DF[cat_column], x='index', y=cat_column, title='Frequency of f{cat_column}')
     st.bar_chart(fig_2, use_container_width=True)
-
->>>>>>> f47ac67618f2c5c421deaff36451d389beef2726
