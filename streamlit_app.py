@@ -13,13 +13,13 @@ filtered_df = original_DF[columns]
 
 numeric_columns = original_DF.select_dtypes(include='number').columns
 categorical_columns = original_DF.select_dtypes(include='object').columns
-num_column = st.selectbox('Select a column', numeric_columns)
-cat_column = st.selectbox('Select a column', categorical_columns)
+num_column = st.selectbox('Select a column to display on the histogram', numeric_columns)
+cat_column = st.selectbox('Select a column to display on the bar chart', categorical_columns)
 
 if num_column:
-    fig_1 = px.histogram(original_DF, x=num_column, title='Distribution of f{num_column}')
+    fig_1 = px.histogram(original_DF, x=num_column, title= f'Distribution of {num_column}')
     st.plotly_chart(fig_1, use_container_width=True, theme="streamlit")
 
 if cat_column:
-    fig_2 = px.bar(original_DF[cat_column], x='index', y=cat_column, title='Frequency of f{cat_column}')
+    fig_2 = st.bar(original_DF[cat_column], y=cat_column, title=f'Frequency of {cat_column}')
     st.bar_chart(fig_2, use_container_width=True)
